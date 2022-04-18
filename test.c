@@ -5,12 +5,15 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: tkomeno <tkomeno@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/04/16 20:50:24 by tkomeno           #+#    #+#             */
-/*   Updated: 2022/04/16 21:23:30 by tkomeno          ###   ########.fr       */
+/*   Created: 2022/04/18 01:05:28 by tkomeno           #+#    #+#             */
+/*   Updated: 2022/04/18 01:05:29 by tkomeno          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include <stdio.h>
 
 int	main(void)
 {
 	int	i;
+
 }
