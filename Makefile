@@ -1,13 +1,13 @@
 NAME = playground.a
-CC = gcc
-EXE = main
 CFLAGS = -Wall -Wextra -Werror
 SRCS = $(wildcard *.c)
 OBJS = $(SRCS:.c=.o)
-DEBUGGER = lldb
 DSYM = main.dSYM
 AR = ar -rc
 RM = rm -rf
+EXE = main
+DB = lldb
+CC = gcc
 
 run: all
 	@$(CC) -g $(EXE).c $(NAME) -o $(EXE)
@@ -16,7 +16,8 @@ run: all
 all: $(NAME)
 
 $(NAME): $(OBJS)
-	$(AR) $(NAME) $(OBJS)
+	@printf "\n"
+	@$(AR) $(NAME) $(OBJS)
 
 clean:
 	$(RM) $(OBJS)
@@ -24,14 +25,13 @@ clean:
 fclean: clean
 	$(RM) $(NAME) $(EXE) $(DSYM)
 
-re:
-	fclean all
+re: fclean run
 
 db: run
-	$(DEBUGGER) $(EXE)
+	$(DB) $(EXE)
 
 norm:
 	@norminette -R CheckForbiddenSourceHeader $(SRCS)
 	@norminette -R CheckDefine includes/*.h
 
-.PHONY: all clean fclean re run norm
+.PHONY: run all clean fclean re db norm
