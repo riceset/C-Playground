@@ -1,27 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   variadic_string.c                                  :+:      :+:    :+:   */
+/*   ft_printf.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tkomeno <tkomeno@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/29 08:25:25 by tkomeno           #+#    #+#             */
-/*   Updated: 2022/04/29 09:07:55 by tkomeno          ###   ########.fr       */
+/*   Updated: 2022/04/29 12:04:16 by tkomeno          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "playground.h"
 
-void	ft_putnbr(int n);
-void	ft_putchar(char c);
-void	ft_putstr(char *s);
-
-void percent_counter(char *str, ...)
+int ft_printf(char *fmt, ...)
 {
 	va_list ap;
 
-	va_start(ap, str);
-	for (char *trv = str; *trv; trv++)
+	va_start(ap, fmt);
+	for (char *trv = fmt; *trv; trv++)
 	{
 		if (*trv == '%')
 		{
@@ -50,6 +46,8 @@ void percent_counter(char *str, ...)
 			ft_putchar(*trv);
 	}
 	va_end(ap);
+
+	return (0);
 }
 
 

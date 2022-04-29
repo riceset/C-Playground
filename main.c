@@ -6,7 +6,7 @@
 /*   By: tkomeno <tkomeno@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/29 01:17:18 by tkomeno           #+#    #+#             */
-/*   Updated: 2022/04/29 09:15:54 by tkomeno          ###   ########.fr       */
+/*   Updated: 2022/04/29 12:03:22 by tkomeno          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,8 @@
 
 int	main(void)
 {
-	percent_counter("%d %d %d %d %s, %c", 3, 2, 1, 0, "Hello", 'c');
+	// ft_printf("%d%d%d%d%s%c", INT_MAX, INT_MIN, 1, -10000000, NULL, 'c');
+	ft_printf("%s\n", "hello");
+	ft_printf("%s\n", "");
 	return (0);
 }

@@ -6,7 +6,7 @@
 /*   By: tkomeno <tkomeno@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/29 01:19:07 by tkomeno           #+#    #+#             */
-/*   Updated: 2022/04/29 08:42:59 by tkomeno          ###   ########.fr       */
+/*   Updated: 2022/04/29 12:04:00 by tkomeno          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,9 @@
 # include <limits.h>
 
 int add(int args, ...);
-void percent_counter(char *str, ...);
+void	ft_putnbr(int n);
+void	ft_putchar(char c);
+void	ft_putstr(char *s);
+int ft_printf(char *fmt, ... ) __attribute__ ((format(printf, 1, 2)));
 
 #endif
