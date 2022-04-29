@@ -6,7 +6,7 @@
 /*   By: tkomeno <tkomeno@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/29 01:19:07 by tkomeno           #+#    #+#             */
-/*   Updated: 2022/04/29 01:58:18 by tkomeno          ###   ########.fr       */
+/*   Updated: 2022/04/29 08:42:59 by tkomeno          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,9 @@
 # include <stdlib.h>
 # include <string.h>
 # include <unistd.h>
+# include <limits.h>
 
 int add(int args, ...);
+void percent_counter(char *str, ...);
 
 #endif
