@@ -16,7 +16,7 @@ run: all
 all: $(NAME)
 
 $(NAME): $(OBJS)
-	@printf "\n"
+	echo
 	@$(AR) $(NAME) $(OBJS)
 
 clean:
@@ -28,6 +28,7 @@ fclean: clean
 re: fclean run
 
 db: run
+	clear
 	$(DB) $(EXE)
 
 norm:
