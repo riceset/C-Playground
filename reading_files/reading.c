@@ -6,7 +6,7 @@
 /*   By: tkomeno <tkomeno@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/07 08:05:14 by tkomeno           #+#    #+#             */
-/*   Updated: 2022/05/07 16:05:46 by tkomeno          ###   ########.fr       */
+/*   Updated: 2022/05/07 16:31:19 by tkomeno          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,35 +18,19 @@ char	*ft_strncpy(char *dst, char *src, unsigned int n);
 
 char	*reading_test(int fd)
 {
-	char	*phrase;
-	char	*line;
-	int		i;
+	int			line_len;
+	char		*line;
+	static char	*pile;
 
-	phrase = "Hello World!\nI am here!\nThat's cool!";
-
-	i = 0;
-	while (phrase[i] != '\n' && phrase[i] != '\0')
-		i++;
-	i++;
-	line = malloc(i * sizeof(char));
-	line = ft_strncpy(line, phrase, i);
-	printf("%s", line);
-	phrase += i;
-	i = 0;
-	while (phrase[i] != '\n' && phrase[i] != '\0')
-		i++;
-	i++;
-	line = malloc(i * sizeof(char));
-	line = ft_strncpy(line, phrase, i);
-	printf("%s", line);
-	phrase += i;
-	i = 0;
-	while (phrase[i] != '\n' && phrase[i] != '\0')
-		i++;
-	i++;
-	line = malloc(i * sizeof(char));
-	line = ft_strncpy(line, phrase, i);
-	printf("%s", line);
+	pile = malloc(BUFFER_SIZE * sizeof(char));
+	read(fd, pile, BUFFER_SIZE);
+	line_len = 0;
+	while (pile[line_len] != '\n' && pile[line_len] != '\0')
+		line_len++;
+	line_len++;
+	line = malloc((line_len + 1) * sizeof(char));
+	line = ft_strncpy(line, pile, line_len);
+	pile += line_len;
 	return (line);
 }
 
