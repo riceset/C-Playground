@@ -6,7 +6,7 @@
 #    By: tkomeno <tkomeno@student.42tokyo.jp>       +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/04/30 02:45:29 by tkomeno           #+#    #+#              #
-#    Updated: 2022/05/07 08:04:24 by tkomeno          ###   ########.fr        #
+#    Updated: 2022/05/08 07:14:33 by tkomeno          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -18,7 +18,7 @@ DB = lldb
 RM = rm -rf
 AR = ar -rc
 
-SRCS = reading.c
+SRCS = reading.c utils.c
 OBJS = $(SRCS:.c=.o)
 
 DEFAULT_BS=256
